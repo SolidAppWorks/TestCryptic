@@ -4,8 +4,8 @@ int main() {
 
 int i= 0;
 
-cin>> i;
-cout<< i;
+std::cin>> i;
+std::cout<< i*100<<"\n";
 
 return 0;
 }
