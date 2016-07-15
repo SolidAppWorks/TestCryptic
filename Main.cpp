@@ -15,7 +15,9 @@ int checkPos(char k) {
 }
 
 /* IDEA
- *  if result from checkpos == -1 leave it be and go to the next one, but then iterator will not be good for the klucz...
+ *  if result from checkpos == -1(white spaces) leave it be and go to the next one
+ * but then iterator will not be good for klucz...
+ * separate iterator for klucz?
  * */
 std::string szyfrowanie(std::string tekst, std::string klucz){
 	std::string szyfr= "";
@@ -26,25 +28,16 @@ std::string szyfrowanie(std::string tekst, std::string klucz){
 }
 	
 std::string deszyfrowanie(std::string szyfr, std::string klucz){
-	//std::string deklucz= "";
 	std::string deszyfr= "";
-		/*for(int i= 0; i< klucz.length(); i++){
-				deklucz+= alftab[checkPos(klucz[i% klucz.length()])][checkPos(szyfr[i% szyfr.length()])];
-		}*/
-	
 	for(int i= 0; i< szyfr.length(); i++){
 		int kpos= checkPos(klucz[i% klucz.length()]);
 		for(int j= 0; j< 26; j++){
-			if(alftab[kpos][j]== szyfr[i]){
-			deszyfr+= alfabet[j];}
+			if(alftab[kpos][j]== szyfr[i])
+			deszyfr+= alfabet[j];
 		}
 	}
-		
-		/*for(int i= 0; i< szyfr.length(); i++){
-				deszyfr+= alftab[checkPos(szyfr[i% szyfr.length()])][checkPos(klucz[i% klucz.length()])];
-		}*/
 		return deszyfr;
-	}
+}
 
 int main() {
 //Szyfr Viegenera
