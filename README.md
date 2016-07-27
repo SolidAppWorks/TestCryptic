@@ -1,4 +1,4 @@
 # TestCryptic
 Testing application for messing around with c++
 
-Currently developing an encrypting program using Viegener's code.
+Currently expanding the project to include other types of encrytions and making it easier for further developement.
