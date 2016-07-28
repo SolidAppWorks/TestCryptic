@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=darek
-Date                   :=07/27/16
+Date                   :=07/28/16
 CodeLitePath           :="/home/darek/.codelite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/viegener.cpp$(ObjectSuffix) 
 
 
 
@@ -98,6 +98,14 @@ $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) "main.cpp"
+
+$(IntermediateDirectory)/viegener.cpp$(ObjectSuffix): viegener.cpp $(IntermediateDirectory)/viegener.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/darek/GitHubProjects/TestCryptic/viegener.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/viegener.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/viegener.cpp$(DependSuffix): viegener.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/viegener.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/viegener.cpp$(DependSuffix) -MM "viegener.cpp"
+
+$(IntermediateDirectory)/viegener.cpp$(PreprocessSuffix): viegener.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/viegener.cpp$(PreprocessSuffix) "viegener.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

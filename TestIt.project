@@ -92,5 +92,7 @@
   </Settings>
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
+    <File Name="header.h"/>
+    <File Name="viegener.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

@@ -1,13 +1,12 @@
 #include <iostream>
-//#include <string>
+#include <string>
 #include <fstream>
-#include "header.h"
 
 //Tablica z alfabetem
 char alftab[52][52];
 std::string alfabet= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-/*int checkPos(char k) {
+int checkPos(char k) {
 	for(int i= 0;i< alfabet.length(); i++){
 		if(k == alfabet[i]){
 			return i;
@@ -52,7 +51,7 @@ std::string deszyfrowanie(std::string encode, std::string klucz){
 	}
 		return deszyfr;
 }
-*/
+
 int main() {
 //Szyfr Viegenera
 

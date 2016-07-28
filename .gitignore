@@ -38,4 +38,8 @@ Thumbs.db
 
 # Custom #
 
-
+Main
+*.project
+TestIt.txt
+*.mk
+/Debug

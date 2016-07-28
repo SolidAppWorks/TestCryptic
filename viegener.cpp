@@ -1,13 +1,12 @@
-#include <iostream>
-//#include <string>
-#include <fstream>
+#include <string>
 #include "header.h"
-
+/*
 //Tablica z alfabetem
 char alftab[52][52];
 std::string alfabet= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+*/
 
-/*int checkPos(char k) {
+int checkPos(char k){
 	for(int i= 0;i< alfabet.length(); i++){
 		if(k == alfabet[i]){
 			return i;
@@ -25,7 +24,7 @@ std::string szyfrowanie(std::string tekst, std::string klucz){
 			kpos= checkPos(klucz[i% klucz.length()]);
 			tpos= checkPos(tekst[i% tekst.length()]);
 			
-			if(tpos!= -1){
+			if(tpos>= 0){
 				szyfr+= alftab[tpos][kpos];
 				kit++;
 			}
@@ -52,8 +51,8 @@ std::string deszyfrowanie(std::string encode, std::string klucz){
 	}
 		return deszyfr;
 }
-*/
-int main() {
+
+/* int main() {
 //Szyfr Viegenera
 
 std::ifstream in;
@@ -72,18 +71,14 @@ for(int i= 0; i<52; i++){
 	}
 }
 
-/* SPRAWDZENIE POPRAWNOSCI TABLICY TRITHEMIUSA
- * for(int i= 0; i<26; i++){
+SPRAWDZENIE POPRAWNOSCI TABLICY TRITHEMIUSA
+  for(int i= 0; i<26; i++){
 	printf("Rzad %d: ", i);
 	for(int j= 0; j<26; j++){
 		printf("%c", alftab[i][j]);
 	}
 	printf("\n");
-}*/
-
-
-/*printf("Prosze podac tekst do zaszyfrowania: ");
-std::getline(std::cin, slowojawne);*/
+}
 
 std::string content( (std::istreambuf_iterator<char>(in) ),
                        (std::istreambuf_iterator<char>()    ) );
@@ -100,4 +95,4 @@ printf("Wynik szyfrowania to: %s\n", szyfr.c_str());
 printf("Wynik deszyfrowania to: %s", deszyfr.c_str());
 
 return 0;
-}
+} */
